@@ -9,8 +9,10 @@ int main(int argc, char *argv[])
     }
     Py_SetProgramName(program);  /* optional but recommended */
     Py_Initialize();
-    PyRun_SimpleString("from time import time,ctime\n"
-                       "print('Today is', ctime(time()))\n");
+    PyRun_SimpleString("import sys\n"
+                       "from time import time,ctime\n"
+                       "print('Today is', ctime(time()))\n"
+                       "print('Version: %s' % sys.version)");
     if (Py_FinalizeEx() < 0) {
         exit(120);
     }
