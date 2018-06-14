@@ -3,4 +3,5 @@ build
 activate*
 deactivate*
 conanbuild*
+kk
 test_package/build
