@@ -5,7 +5,7 @@ from conans import ConanFile, MSBuild, tools, AutoToolsBuildEnvironment
 class CpythonConan(ConanFile):
     name = "cpython"
     version = "3.6.5"
-    license = "<Put the package license here>"
+    license = "PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2"
     url = "<Package recipe repository url here, for issues about the package>"
     description = "<Description of Cpython here>"
     settings = "os", "compiler", "build_type", "arch"
@@ -53,6 +53,8 @@ class CpythonConan(ConanFile):
                 self.cpp_info.libs.append("dl")
                 self.cpp_info.exelinkflags.append("-framework CoreFoundation")
                 self.cpp_info.sharedlinkflags = self.cpp_info.exelinkflags
+            elif self.settings.os == "Linux":
+                self.cpp_info.libs.extend(["pthread", "dl", "util"])
         else:
             self.cpp_info.libs = ["python%s" % self.version[0]]
 
