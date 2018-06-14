@@ -6,8 +6,8 @@ class CpythonConan(ConanFile):
     name = "cpython"
     version = "3.6.5"
     license = "PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Cpython here>"
+    url = "https://github.com/lasote/conan-cpython"
+    description = "CPython"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
     default_options = "shared=True"
