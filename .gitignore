@@ -5,3 +5,6 @@ deactivate*
 conanbuild*
 kk
 test_package/build
+conaninfo.txt
+conan.lock
+graph_info.json
