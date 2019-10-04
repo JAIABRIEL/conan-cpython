@@ -4,9 +4,9 @@ from conans import ConanFile, MSBuild, tools, AutoToolsBuildEnvironment
 
 class CpythonConan(ConanFile):
     name = "cpython"
-    version = "3.6.5"
+    version = "3.7.4"
     license = "PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2"
-    url = "https://github.com/lasote/conan-cpython"
+    url = "https://github.com/JAIABRIEL/conan-cpython"
     description = "CPython"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
@@ -39,7 +39,7 @@ class CpythonConan(ConanFile):
             src = os.path.join("cpython-%s" % self.version, "PCBuild", out_folder)
             self.copy(pattern="*.dll", dst="bin", src=src, keep_path=False)
             self.copy(pattern="*.lib", dst="lib", src=src, keep_path=False)
-            self.copy(pattern="*.h", dst="include", src= os.path.join(self.src_subfolder, "Include"), keep_path=False)
+            self.copy(pattern="*.h", dst="include", src= os.path.join(self.src_subfolder, "Include"), keep_path=True)
             self.copy(pattern="*.h", dst="include", src=os.path.join("cpython-%s" % self.version, "PC"), keep_path=False)
             self.copy(pattern="*.exe", dst="bin", src=src, keep_path=False)
 
